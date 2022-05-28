@@ -1,0 +1,300 @@
+:root{
+    --color1: #3F88C5;
+    --color2: #FFBA08;
+    --color3: #D00000;
+    --color4: #72CC50;
+    --color5: #05695C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin:0; padding: 0;
+    font-size: 18px;
+    /* background-image: url('./bgImg.png'); */
+    background-color: var(--color1);
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+/* LOGO */
+svg{
+    width: 10%;
+    padding-left: 2vmin;
+}
+.navbar{
+    position: fixed;
+    height: 100%;
+    line-height: 50px;
+    background-color: #275f8d49;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 3px gray;
+    width:15vw;
+    z-index: 10;
+    /* padding-top: 3vmin; */
+}
+
+.atags{
+    margin-top: 3vmin;
+    padding-left: 3vmin;
+
+}
+.atags a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    gap:2vmin;
+}
+.logo p{
+    /* position: relative;
+    margin-left: 10px;
+    top: 30px; */
+    margin-bottom: 5vmin;
+    font-size: 1.5vw;
+    font-family: cursive;
+    font-style: italic;
+    color: var(--color2);
+    text-decoration: none;
+
+}
+.atags a:hover{
+    background-color: var(--color2);
+}
+
+h2{
+    color: var(--color2);
+}
+
+/* gesture */
+.gestureGames{
+    display: flex; gap:3vw; margin-top: 2vmin;
+}
+.gestureGame{
+    max-width: 20vw;
+
+}
+.gestureGame img{
+    max-width: 20vw;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #555;
+    transition: all 0.5s;
+    /* border:10px solid var(--color2); */
+}
+.gestureGame img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.gestureGame p{
+    text-align: center;
+    color:#eee;
+    margin: 3vmin 0;
+    font-weight: 600;
+}
+
+/* game cards */
+.cards {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2vmin;
+    gap:5vmin;
+}
+
+.gamecard {
+    border-radius: 5px;
+    transition: all 0.5s;
+    max-width: 20vw;
+
+    border-radius: 10px;
+}
+.gamecard:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #eee;
+}
+.gamecard>img {
+
+    border-radius: 10px;
+    max-width: 20vw;
+}
+.gamecard>p{
+    padding:2vmin 1vmin;
+    color: #eee;
+    text-align: center;
+}
+
+/* Content */
+.content{
+    /* padding-top: 5vmin; */
+    display: flex;
+    flex-direction: column;
+    padding-left: 15vw;
+    width:80vw;
+    height:90vh;
+}
+.ICONS{
+    display:none;
+}
+
+/* btnImages */
+.btnScr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10vw;
+    margin:auto;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+}
+
+.btnImgWrapper{
+    width:11vw;
+    height:11vw;
+    box-shadow: 0 0 15px #222;
+    border-radius: 50%;
+    background-color: var(--color2);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+}
+.btnImg{
+    width: 6vw;
+    height: 6vw;
+    cursor:pointer;
+}
+.btn{
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+}
+.btn p{
+    text-align: center;
+    margin: 2vmin 0 0 0;
+    font-size: 3rem;
+    color: var(--color2);
+}
+
+/* gameScreen */
+.gameScr{
+    width: 75vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding:0 5vmin;
+    padding-top: 5vmin;
+    z-index: 10;
+    background-color: var(--color1);
+
+    display: none;
+
+}
+/* ------------------------------------------ */
+.trainingScr{
+    position: absolute;
+    top:15vmin;
+    left:50vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5vmin;
+    margin:-5vw -5vw;
+
+    display: none;
+}
+
+.videoPanel{
+    /* border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #555; */
+}
+
+canvas{
+    border-radius: 20px;
+    box-shadow: 0 0 15px #555;
+}
+
+
+.videoCtrl{
+    display: flex; flex-direction: column; gap:5vmin;
+    font-size: 2rem;
+    display:none;
+}
+
+.videoCtrlBtns{
+    display: flex;
+    justify-content: center;
+    gap:1vmin;
+    text-align: center;
+}
+.bgBtn{
+    display: flex; align-items: center; gap:3vmin;
+    cursor: pointer;
+}
+.videoBtn{
+    background-color: #ccc;
+    padding:5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+
+}
+.recordNum{
+    display: flex;
+    justify-content: center;
+}
+.recordNum p{
+    text-align: center;
+}
+.trainingScr button{
+    margin: auto;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 0 5px gray;
+    background-color: var(--color3);
+    padding:1vmin 2vmin;
+    color:#eee;
+    font-size: 2rem;
+    margin-top: 5vmin;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.gameOption{
+    border-radius: 20px;
+}
+
+#about{
+    /* width:50vw; */
+    color:#eee;
+    margin:5vmin 10vmin;
+    padding: 3vmin 0;
+    margin-left: 0;
+    line-height: 3rem;
+    border-top: 3px solid white;
+    /* margin-left: auto; */
+    font-size: 1.8rem;
+}
+#about h1{
+    margin-bottom: 3vmin;
+}
+
+#about a {
+    color:black;
+    background-color: var(--color2);
+    padding:2px 5px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
