@@ -40,23 +40,23 @@ setInterval(() => {
   resReceived = false;
 }, 1000);
 
-window.addEventListener('keydown',(e)=>{
+// window.addEventListener('keydown',(e)=>{
 
-  if(e.key === 'ArrowRight'){
-    document.querySelectorAll('.gameOption')[cardNum].style.border = 'none';
-    if(cardNum === 6) cardNum = -1;
-    cardNum++;
-    document.querySelectorAll('.gameOption')[cardNum].style.border = '3px solid white';
-  } else if (e.key === 'ArrowLeft'){
-    document.querySelectorAll('.gameOption')[cardNum].style.border = 'none';
-    if(cardNum === 0) cardNum = 7;
-    cardNum--;
-    document.querySelectorAll('.gameOption')[cardNum].style.border = '3px solid white';
-  } else if (e.key === 'ArrowUp'){
-    document.querySelectorAll('.gameOption')[cardNum].click();
-  }
+//   if(e.key === 'ArrowRight'){
+//     document.querySelectorAll('.gameOption')[cardNum].style.border = 'none';
+//     if(cardNum === 6) cardNum = -1;
+//     cardNum++;
+//     document.querySelectorAll('.gameOption')[cardNum].style.border = '3px solid white';
+//   } else if (e.key === 'ArrowLeft'){
+//     document.querySelectorAll('.gameOption')[cardNum].style.border = 'none';
+//     if(cardNum === 0) cardNum = 7;
+//     cardNum--;
+//     document.querySelectorAll('.gameOption')[cardNum].style.border = '3px solid white';
+//   } else if (e.key === 'ArrowUp'){
+//     document.querySelectorAll('.gameOption')[cardNum].click();
+//   }
   
-})
+// })
 
 function scrollByVideo(videoRes){
   if(resReceived) return;
@@ -201,7 +201,7 @@ function draw() {
       obs.build();
     
       //  Enabling ontinuous keys:
-      //  keyPressed();
+       keyPressed();
     
       //  Gameplay
       if(car.pos.x < 110 || car.pos.x > (390-carWidth)){
