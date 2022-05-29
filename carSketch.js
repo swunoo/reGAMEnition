@@ -1,14 +1,14 @@
 
 function preload(){
   // Pre-loading images
-  carImg = loadImage('../images/CarOptions/car03.png');
-  truckImg01 = loadImage('../images/Obstacles/t01.png');
-  truckImg02 = loadImage('../images/Obstacles/t02.png');
-  truckImg03 = loadImage('../images/Obstacles/t03.png');
-  pedestImg01 = loadImage('../images/Obstacles/p01.png');
-  bikeImg01 = loadImage('../images/Obstacles/b01.png');
-  explosionImg = loadImage('../images/damage.png');
-  bushImg = loadImage('../images/Obstacles/others/o01.png');
+  carImg = loadImage('images/CarOptions/car03.png');
+  truckImg01 = loadImage('images/Obstacles/t01.png');
+  truckImg02 = loadImage('images/Obstacles/t02.png');
+  truckImg03 = loadImage('images/Obstacles/t03.png');
+  pedestImg01 = loadImage('images/Obstacles/p01.png');
+  bikeImg01 = loadImage('images/Obstacles/b01.png');
+  explosionImg = loadImage('images/damage.png');
+  bushImg = loadImage('images/Obstacles/others/o01.png');
 }
 
 function startCarGame(){
