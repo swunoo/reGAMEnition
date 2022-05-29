@@ -1,5 +1,3 @@
-
-
 function startSnakeGame(){
   if(video) video.hide();  
 
@@ -7,14 +5,11 @@ function startSnakeGame(){
   createCanvas(390, 390);
   snake = new Snake();
   food = new Food();
-  setInterval(()=>{snake.cont()}, 500);
-
-  // if(detect) classifyVideo();
+  setInterval(()=>{snake.cont()}, 500); // move every half a second.
 }
 
+//  Video Recognition
 function contByVideo(videoRes){
-  // Basically the same config from keyPressed.
-  // Left and Right are mirrored.
   console.log(videoRes);
   if(snake.turning) return;
   if(videoRes === 'Up'){
@@ -31,12 +26,14 @@ function contByVideo(videoRes){
       turnSnakeX();
     }
   }else if(videoRes === 'Right'){
+    // mirrored
     if(snake.xAxis) snake.dir = -10;
     else{
       snake.posChangeX = -10;
       turnSnakeY();
     }
   }else if(videoRes === 'Left'){
+    // mirrored
     if(snake.xAxis) snake.dir = 10;
     else{
       turnSnakeY();
@@ -46,6 +43,7 @@ function contByVideo(videoRes){
   }
 }
 
+//  HELPER FUNCTIONS to turn the snake.
 function turnSnakeX(){
     // this.posChangeY/X account for the change in "y/x".
     // this.lenChange is pretty much universal.
@@ -80,28 +78,28 @@ function turnSnakeY(){
 
 function Snake(){
 
-//  Main variables
+  //  Main variables
   this.x = random(100,200);
   this.y = random(100,200);
   this.xLen = 30;
   this.yLen = 10;
 
-//  Turning
-    this.turnX = 0;
-    this.turnY = 0;
-    this.turnLenX = 10;
-    this.turnLenY = 10;
-    this.lenChange = 10;
-    this.posChangeY = 0;
-    this.posChangeX = 0;
-    this.turnPt;
+  //  Turning
+  this.turnX = 0;
+  this.turnY = 0;
+  this.turnLenX = 10;
+  this.turnLenY = 10;
+  this.lenChange = 10;
+  this.posChangeY = 0;
+  this.posChangeX = 0;
+  this.turnPt;
 
-//  Speed and direction
+  //  Speed and direction
   this.xAxis = true;
   this.dir = 10;
   this.turning = false;
   
-  
+  // Function to loop.
   this.show = function(){
     fill('#FFBA08');
     rect(this.x, this.y, this.xLen, this.yLen);
@@ -109,12 +107,16 @@ function Snake(){
       rect(this.turnX,this.turnY,this.turnLenX,this.turnLenY);
     }
   }
+
+  // Function to move every half a second.
   this.cont = function(){
     this.checkForPts();
     if(this.turning) this.rotate();
       else if(this.xAxis) this.x += this.dir;
         else this.y += this.dir;
   }
+
+  //  HELPER FUNCTION to rotate the snake.
   this.rotate = function(){
     if(!this.turnPt){
         this.turnY += this.posChangeY;
@@ -150,6 +152,7 @@ function Snake(){
         }
       }
   }
+  // growing when a food is eaten.
   this.checkForPts = function(){
       for(let i = 0; i<4; i++){
         if((food.vertices[i][0] >= snake.x && food.vertices[i][0] <= snake.x + snake.xLen) && (food.vertices[i][1] >= snake.y && food.vertices[i][1] <= snake.y + snake.yLen)){
@@ -159,12 +162,13 @@ function Snake(){
           return;
         }
       }
-    }
+  }
   this.grow = function(){
     console.log("growing")
     if(this.xAxis) this.xLen+=10;
       else this.yLen+=10;
   }
+  // when the snake hits the border
   this.collided = function(){
     fill(255);
     image(explosionImg, this.x, this.y, 50, 50);
@@ -173,10 +177,12 @@ function Snake(){
 }
 
 function Food(){
+  // Function to loop.
   this.show = function(){
     fill('#D00000');
     ellipse(this.x, this.y, 10,10);
   }
+  // new food after one is eaten.
   this.randomize = function(){
     this.x = random(20,280);
     this.y = random(20,280);
