@@ -112,7 +112,7 @@ function startTraining(){
 
   //  clicking on "Let's Go!" and completing the training.
   document.querySelector('.trainingScr button').addEventListener('click', (e)=>{
-    knn.save('model.json');  // UNCOMMENT THIS TO SAVE THE MODEL.
+    // knn.save('model.json');  // UNCOMMENT THIS TO SAVE THE MODEL.
     gameScr = true;
     document.querySelector('.videoCtrl').style.display = 'none';
     document.querySelector('.videoPanel').style.marginLeft = '15vw';
