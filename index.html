@@ -9,16 +9,29 @@
 
     <link rel="shortcut icon" href="face.png" type="image/x-icon">
     <link rel="stylesheet" href="main.css">
-
-    <script defer src="p5.js"></script>
-    <script defer src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
-    <!-- <script defer src="ml5.min.js"></script> -->
-    <script defer src="main.js"></script>
-    <script defer src="carSketch.js"></script>
-    <script defer src="snakeSketch.js"></script>
 </head>
 
 <body>
+
+    <!--Modal-->
+    <div id="modal_container">
+        <div id="modal_content">
+            <h2>User Manual</h2>
+
+            <ul>
+                <li>Loading ml5 library may take a few seconds before buttons can be clicked.</li>
+                <li>Image recognition largely depends on the training data it has, so new players should train a new model by clicking 'New Model'.</li>
+                <li>To train the model, players can view the on-screen video feedback and click label buttons ('Up', 'Down', etc.) accordingly. More models mean better recognition results. </li>
+                <li>The mini project is still very much of a prototype.</li>
+                <li>Thank you for giving it a try.</li>
+            </ul>
+
+            <button onclick="document.getElementById('modal_container').style.display='none';"> Got it. </button>
+
+        </div>
+        
+
+    </div>
     <!--Navbar-->
     <div class="navbar">
         <div class="atags">
@@ -178,6 +191,11 @@
       currentAudio = audioID;
     }
 </script>
-
+<script src="p5.js"></script>
+<script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
+<!-- <script src="ml5.min.js"></script> -->
+<script src="main.js"></script>
+<script src="carSketch.js"></script>
+<script src="snakeSketch.js"></script>
 </body>
 </html>

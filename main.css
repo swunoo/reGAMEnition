@@ -298,3 +298,54 @@ canvas{
     font-size: 1.5rem;
     text-decoration: none;
 }
+
+/* modal for user manual at the start */
+
+#modal_container {
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeinfromnone 1s ease;
+
+}
+
+@keyframes fadeinfromnone {
+    0%{ opacity: 0; }
+    50%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+#modal_content {
+    padding:3rem 6rem;
+    box-shadow: 1px 2px 5px darkgray;
+    max-width: 500px;
+    background-color: #fff;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal_content h2{
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+#modal_content button {
+    background-color: #3F88C5;
+    color: white;
+    font-weight: 500;
+    border: none;
+    box-shadow: 1px 1px 5px darkgray;
+    padding:0.5rem 1rem;
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
